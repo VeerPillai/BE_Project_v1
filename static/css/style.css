@@ -1,0 +1,55 @@
+:root{
+    --background-color:#fff;
+    --body-color:blue;
+    --primary:aqua;
+    --secondary: 
+
+}
+html, body{
+    height: 100%;
+}
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h1,h2,h3,h4,h5,h6{
+    font-size: 100%;
+    font-weight: normal;
+}
+a{
+    text-decoration: none;
+}
+ul,ol{
+    list-style: none;
+}
+button,input,textarea{
+    font: inherit;
+    cursor: pointer
+}
+img,video{
+    display: block;
+    max-width: 100%;
+}
+
+
+body{
+    font-size: 1rem;
+    line-height: 1.55;
+    background-color: var(--background-color);
+    color: var(--body-color);
+}
+.container{
+    width: 100%;
+    padding-left: 1 rem;
+    padding-right: 1 rem ;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header{
+    border-top: 1rem solid var(--secondary);
+    padding: 1.5rem 0
+}
