@@ -1,14 +1,18 @@
+* {
+  background-color: var(--body-background);
+}
+
 :root{
 /*idhar sab important color daal dena agar dark mode use karege to kaam aayega
   While accessing use var(colorname)*/
-    --body-background: #fff;
+    --body-background: #f3f6ff;
     --primary-color: purple;
     --secondary-color: cyan;
     --btn-color: red;
 }
 
 /* ------- Media Queries -------*/
-@media (min-width: 576px) {
+/* @media (min-width: 576px) {
     .container, .container-sm {
       max-width: 540px;
     }
@@ -30,12 +34,12 @@
     .container, .container-sm, .container-md, .container-lg, .container-xl {
       max-width: 1140px;
     }
-  }
+  } */
 /* ------- Media Queries end-------- */
 
 
 /* Default Settings */
-body,html{
+/* body,html{
     height: 100%;
 }
 *,
@@ -83,9 +87,11 @@ table{
 }
 td,th{
     padding: 0; 
-}
+} */
 
 /*Default ends here */
+
+
 
 
 body{
