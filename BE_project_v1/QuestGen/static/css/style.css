@@ -1,14 +1,25 @@
-* {
-  background-color: var(--body-background);
-}
-
 :root{
 /*idhar sab important color daal dena agar dark mode use karege to kaam aayega
   While accessing use var(colorname)*/
     --body-background: #f3f6ff;
-    --primary-color: purple;
-    --secondary-color: cyan;
-    --btn-color: red;
+    --font-dark-black: #273238;
+    --font-grey: #75767b;
+    --btn-color: #42a5f6;
+}
+
+@font-face {
+  font-family: 'roboto-light';
+  src: url("../fonts/Roboto-Light.ttf");
+}
+
+@font-face {
+  font-family: 'roboto-medium';
+  src: url("../fonts/Roboto-Medium.ttf");
+}
+
+@font-face {
+  font-family: 'roboto-black';
+  src: url("../fonts/Roboto-Black.ttf");
 }
 
 /* ------- Media Queries -------*/
@@ -39,8 +50,8 @@
 
 
 /* Default Settings */
-/* body,html{
-    height: 100%;
+body,html{
+    height: 100vh;
 }
 *,
 *::before,
@@ -87,20 +98,22 @@ table{
 }
 td,th{
     padding: 0; 
-} */
+}
 
 /*Default ends here */
 
 
 
 
-body{
+#bootstrap-override body{
     font-size: 1rem;
     font-family: "Sans Serif";
     background-image : url("../images/wave1.svg");
+    background-color: var(--body-background);
     background-repeat : no-repeat;
     background-position: center bottom;
 }
+
 
 .container {
     width: 100%;
@@ -110,7 +123,7 @@ body{
     margin-right: auto ;
 }
 header{
-    padding: 1.5rem 0;
+    padding: 0 0;
 }
 nav{
     display: flex;
@@ -126,4 +139,83 @@ nav{
     flex-basis: 100%;
 }
 
+#bootstrap-override .navLogo {
+  margin: 0px;
+  width: 150px;
+}
 
+#bootstrap-override hr.navDivider {
+  border-top: 3px solid rgba(159, 66, 170, 0.56);
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+#bootstrap-override body header nav{
+  font-family: roboto-light;
+  color: var(--font-grey);
+  font-size: 25px;
+}
+
+#bootstrap-override body header nav .active{
+  font-family: roboto-medium;
+  color: var(--font-dark-black);
+}
+
+
+#bootstrap-override .navbar-nav {
+  margin-right: 0px;
+  margin-left: 770px;
+}
+
+
+#bootstrap-override .nav-item {
+  margin-left: 25px;
+}
+
+#bootstrap-override .nav-link {
+  padding-top: 55px;
+  padding-bottom: 0px;
+}
+
+div .jumbotron {
+  text-align: center;
+  padding-top: 150px;
+}
+
+div .jumbotron .container .display-3 {
+  font-family: roboto-black;
+  color: var(--font-dark-black);
+}
+
+div .jumbotron .container p.lead {
+  font-family: roboto-medium;
+  color: var(--font-dark-black);
+}
+
+.btn {
+  color: #fff;
+  background-color: var(--btn-color);
+  border-color: var(--btn-color);
+}
+
+.btn-lg {
+  font-family: roboto-medium;
+  font-size: 25px;
+  border-radius: 50rem;
+  width: 300px;
+}
+
+i.arrow-icon {
+  background: url("../images/arrow.png") no-repeat;
+  transform: rotate(270deg);
+  background-size: cover;
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  padding-left: 25px;
+}
+/* div#test {
+  font-family: roboto-light;
+} */
