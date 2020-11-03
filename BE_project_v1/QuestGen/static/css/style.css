@@ -108,10 +108,11 @@ td,th{
 #bootstrap-override body{
     font-size: 1rem;
     font-family: "Sans Serif";
-    background-image : url("../images/wave1.svg");
+    background-image : url("../images/bg.png");
     background-color: var(--body-background);
-    background-repeat : no-repeat;
-    background-position: center bottom;
+    background-repeat : repeat-y;
+    
+    background-position: 80% 165vh;
 }
 
 
