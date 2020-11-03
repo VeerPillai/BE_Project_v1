@@ -2,9 +2,11 @@
 /*idhar sab important color daal dena agar dark mode use karege to kaam aayega
   While accessing use var(colorname)*/
     --body-background: #f3f6ff;
+    --container-background: #e3e6ef;
     --font-dark-black: #273238;
     --font-grey: #75767b;
     --btn-color: #42a5f6;
+    --purple: #9f42aa;
 }
 
 @font-face {
@@ -217,6 +219,64 @@ i.arrow-icon {
   width: 20px;
   padding-left: 25px;
 }
-/* div#test {
-  font-family: roboto-light;
-} */
+
+
+/* Login/Signup CSS */
+.auth-container {
+  margin-top: 50px;
+  position: absolute;
+  box-sizing: border-box;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  background-color: var(--container-background);
+  -webkit-box-shadow: 0px 0px 16px 6px rgba(50, 50, 50, 0.18);
+  -moz-box-shadow:    0px 0px 16px 6px rgba(50, 50, 50, 0.18);
+  box-shadow:         0px 0px 16px 6px rgba(50, 50, 50, 0.18);
+}
+
+.auth-container .tab-header {
+  height: 50px;
+  line-height: 50px;
+}
+
+.auth-container .tab-header > div {
+  width: 50%;
+  float: left;
+  text-align: center;
+  background: #c3c6cd;
+  color: var(--font-grey);
+  cursor: pointer;
+}
+
+.auth-container .tab-header > div.active {
+  background: var(--container-background);
+  color: var(--font-dark-black)
+}
+
+.auth-container .tab-content {
+  padding: 20px;
+}
+
+.auth-container .tab-content .form-group {
+  margin: 10px 0px;
+}
+
+.auth-container .tab-content .form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--purple);
+  font-size: 16px;
+  background: var(--body-background);
+  border-radius: 50rem;
+  outline: none;
+}
+
+.auth-container .tab-content > div.active {
+  display: block;
+}
+
+.auth-container .tab-content > div {
+  display: none;
+}

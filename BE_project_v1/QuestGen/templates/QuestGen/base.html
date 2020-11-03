@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" id="bootstrap-override">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {% load static %}
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}">
+
+
+    <!-- Main CSS File -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+
+    <title>QuestGen</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="#"><img class="navLogo" src="{% static 'images\QuestGenLogo.png'%}" alt="QuestGenLogo"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">How it Works</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Take Test</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <hr class="rounded navDivider">
+
+    {% block content %} {% endblock%}
+
+
+    <!-- jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="{% static 'js/jquery-3.5.1.min.js'%}"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js'%}"></script>
+    
+</body>
+</html>
