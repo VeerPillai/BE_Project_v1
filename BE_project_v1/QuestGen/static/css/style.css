@@ -71,10 +71,10 @@ nav,section{
     display: block; 
 }
 
-h1,h2,h3,h4,h5,h6{
+/* h1,h2,h3,h4,h5,h6{
     font-size: 100%;
     font-weight: normal;
-}
+} */
 a {
     text-decoration: none;
     color: inherit;
@@ -174,7 +174,8 @@ nav{
 
 
 #bootstrap-override .nav-item {
-  margin-left: 25px;
+  width: auto;
+  margin-left: 10px;
 }
 
 #bootstrap-override .nav-link {
@@ -201,6 +202,7 @@ div .jumbotron .container p.lead {
   color: #fff;
   background-color: var(--btn-color);
   border-color: var(--btn-color);
+  position: relative;
 }
 
 .btn-lg {
@@ -212,12 +214,14 @@ div .jumbotron .container p.lead {
 
 i.arrow-icon {
   background: url("../images/arrow.png") no-repeat;
-  transform: rotate(270deg);
   background-size: cover;
   display: inline-block;
-  height: 20px;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
   width: 20px;
-  padding-left: 25px;
+  height: 20px;
 }
 
 
@@ -241,6 +245,11 @@ i.arrow-icon {
   line-height: 50px;
 }
 
+.auth-container .tab-header a, a:hover, a:focus, a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
 .auth-container .tab-header > div {
   width: 50%;
   float: left;
@@ -248,11 +257,28 @@ i.arrow-icon {
   background: #c3c6cd;
   color: var(--font-grey);
   cursor: pointer;
+  font-family: roboto-medium;
+  color: var(--font-grey);
+  font-size: 32px;
+  padding: 10px;
 }
 
 .auth-container .tab-header > div.active {
   background: var(--container-background);
-  color: var(--font-dark-black)
+  color: var(--font-dark-black);
+  position: relative;
+  display: inline-block;
+}
+
+.auth-container .tab-header > div.active::after {
+  content: '';
+  height: 2px;
+  width: 30%;
+  position: absolute;
+  left: calc(50% - 15%);
+  bottom: 0;
+  background-color: var(--purple);
+  border-radius: 80em;
 }
 
 .auth-container .tab-content {
@@ -265,6 +291,7 @@ i.arrow-icon {
 
 .auth-container .tab-content .form-group input {
   width: 100%;
+  margin-bottom: 20px;
   padding: 10px;
   border: 1px solid var(--purple);
   font-size: 16px;
@@ -275,6 +302,7 @@ i.arrow-icon {
 
 .auth-container .tab-content > div.active {
   display: block;
+  margin-top: 40px;
 }
 
 .auth-container .tab-content > div {

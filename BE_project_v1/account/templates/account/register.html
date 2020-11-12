@@ -1,0 +1,50 @@
+{% extends "Questgen/base.html" %}
+{% block content %}
+<div class="container">
+    <div class="auth-container">
+        <div class="auth-box">
+            <div class="tab-header">
+                <div><a href="{% url 'login' %}">Login</a></div>
+                <div class="active"><a href="{% url 'register' %}">Signup</a></div>
+            </div>
+            <div class="tab-content">
+                <!-- SIGNUP FORM -->
+                <div class="tab-body active">
+                    <form action="/account/register/" method="post"> {% csrf_token %} 
+                        <div class="form-group">
+                            <input type="text" name="username" class="form-control" placeholder="Your Username" required>
+                        </div>
+                        <div class="form-group">
+                          <input type="email" name="email" class="form-control" placeholder="Your E-mail" required> 
+                        </div>
+                        <div class="form-group">
+                          <input type="password" name="password1" class="form-control" placeholder="Choose a Password" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" name="password2" class="form-control" placeholder="Repeat Password" required>
+                        </div>
+
+                        {% for field in registration_form %}
+                            <p>
+                            {% for error in field.errors %}
+                                <p style="color: red; text-align: center;">{{ error }}</p>
+                            {% endfor %}
+                            </p>
+                        {% endfor %}
+                
+                        {% if registration_form.non_field_errors %}
+                            <div style="color: red; text-align: center;">
+                                <p>{{ registration_form.non_field_errors }}</p>
+                            </div>
+                        {% endif %}
+
+                        <div style="text-align: center;">
+                            <button type="submit" class="btn btn-primary btn-lg" name="submit" value='register'>Signup<i class="arrow-icon"></i></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
