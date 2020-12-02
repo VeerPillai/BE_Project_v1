@@ -1,2 +1,7 @@
 .idea
 .vscode
+.vscode/*
+.idea/*
+/account/__pycache__/*
+/BE_project_v1/__pycache__/*
+/Questgen/__pycache__/*
