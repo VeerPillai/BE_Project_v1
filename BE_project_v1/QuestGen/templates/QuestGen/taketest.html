@@ -1,4 +1,71 @@
 {% extends "Questgen/base.html" %}
 {% block content %}
+{% load static %}
+<div class="taketest-container">
+    <div class="row">
+        <div class="col-7 lhs-div">
+            <h1 style="font-family: roboto-medium; color: var(--font-dark-black);">I want to Generate Questions and...</h1>
+            <a data-toggle="modal" data-target="#settingsModal" style="margin-top: 25px;" class="btn btn-primary btn-lg" href="#" role="button">Take as a Quiz<i class="arrow-icon"></i></a>
+            
+            <!-- Modal -->
+            <div class="modal fade" id="settingsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h3 class="modal-title" id="exampleModalLabel">Quiz Options</h3>
+                    </div>
+                    <div class="modal-body">
+                        <p># of Questions we'll generate (approx) : 10 </p>
+                        <p>Test Type :</p>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input onclick="javascript:selectTimer();" type="radio" id="radio-untimed" name="timed-or-untimed" class="custom-control-input">
+                                        <label class="custom-control-label" for="radio-untimed">Untimed</label>
+                                    </div>  
+                                </div>
+                                <div class="col-6">
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input onclick="javascript:selectTimer();" type="radio" id="radio-timed" name="timed-or-untimed" class="custom-control-input">
+                                        <label class="custom-control-label" for="radio-timed">Timed</label>
+                                    </div>
+                                    <br>
+                                    <br>
+                                    <div id="timed" style="display:none;">
+                                        <label for="timerInput">Set Timer</label>
+                                        <input type="time" id="timerInput" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer" style="margin: auto;">
+                        <a class="btn btn-primary btn-sm" href="#" role="button" data-dismiss="modal">Close</a>
+                        <a class="btn btn-primary btn-sm" href="#" role="button">Proceed<i class="arrow-icon"></i></a>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <!-- Modal End -->
+
+            <br>
+
+
+            <a style="margin-top: 25px;" class="btn btn-primary btn-lg" href="#" role="button">Download<i class="arrow-icon"></i></a>
+        </div>
+        <div class="col-5 rhs-div">
+            <div class="drop-zone">
+                <span class="drop-zone__prompt">Drop file here or click to choose from computer</span>
+                <input type="file" name="myFile" class="drop-zone__input">
+            </div>
+            <span id="file-error"></span>
+            <br>
+            <span>* Read File Content Instructions <a href="#">here</a></span>
+        </div>
+    </div>
+</div>
+
+<script src="{% static 'js/upload-handler.js'%}"></script>
 
 {% endblock content %}

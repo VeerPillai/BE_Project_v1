@@ -102,6 +102,12 @@ td,th{
     padding: 0; 
 }
 
+.custom-control-input:checked ~ .custom-control-label::before {
+  color: var(--container-background);
+  border-color: var(--purple);
+  background-color: var(--purple);
+}
+
 /*Default ends here */
 
 
@@ -212,6 +218,13 @@ div .jumbotron .container p.lead {
   width: 300px;
 }
 
+.btn-sm {
+  font-family: roboto-medium;
+  font-size: 15px;
+  border-radius: 50rem;
+  width: 150px;
+}
+
 i.arrow-icon {
   background: url("../images/arrow.png") no-repeat;
   background-size: cover;
@@ -307,4 +320,89 @@ i.arrow-icon {
 
 .auth-container .tab-content > div {
   display: none;
+}
+
+/* Take Test CSS */
+div.taketest-container {
+  margin-top: 50px;
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
+div.taketest-container .lhs-div {
+  border-right: 3px var(--purple) solid;
+}
+
+.drop-zone {
+  max-width: 500px;
+  height: 250px;
+  padding: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  cursor: pointer;
+  background-color: var(--container-background);
+  color: var(--font-dark-black);
+  border: 3px dashed var(--font-grey);
+  border-radius: 10px;
+}
+
+.drop-zone--over {
+  border-style: solid;
+}
+
+.drop-zone__input {
+  display: none;
+}
+
+.drop-zone__thumb {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #cccccc;
+  background-size: cover;
+  position: relative;
+}
+
+.drop-zone__thumb::after {
+  content: attr(data-label);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 5px 0;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.75);
+  font-size: 14px;
+  text-align: center;
+}
+
+#file-error {
+  color: red;
+}
+
+.modal-backdrop {
+  background-color: #9478c4;
+}
+
+.modal-content {
+  background-color: var(--container-background);
+}
+
+#bootstrap-override .modal{
+  font-family: roboto-light;
+  color: var(--font-dark-black);
+  font-size: 20px;
+}
+
+#bootstrap-override .modal .modal-header {
+  font-family: roboto-black;
+  color: var(--font-dark-black);
+  font-size: 21px;
+  margin: auto;
 }
