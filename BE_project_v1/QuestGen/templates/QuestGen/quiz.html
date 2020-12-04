@@ -1,0 +1,126 @@
+{% extends "Questgen/base.html" %}
+{% block content %}
+{% load static %}
+
+<div class="quiz-container">
+    <div class="row">
+        <!-- LHS -->
+        <div class="col-9">
+            <div class="quiz-header">
+                <p>Quiz ID : 125658964</p>
+                <p>Duration : 10m:15s</p>
+                <p>Date : 20/10/2020</p>
+                <p>Points : 10</p>
+            </div>
+            <hr style="border-top: 3px solid var(--purple);">
+            <div class="quiz-body">
+                <div class="question">
+                    <div class="question-1">
+                        <p>#1 : Which of the following Operating System does not support more than one program at a time?</p>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="option-1" name="options" class="custom-control-input">
+                            <label class="custom-control-label" for="option-1">Linux</label>
+                        </div> 
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="option-2" name="options" class="custom-control-input">
+                            <label class="custom-control-label" for="option-2">Windows</label>
+                        </div> 
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="option-3" name="options" class="custom-control-input">
+                            <label class="custom-control-label" for="option-3">MAC</label>
+                        </div> 
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="option-4" name="options" class="custom-control-input">
+                            <label class="custom-control-label" for="option-4">DOS</label>
+                        </div>
+                    </div> 
+                    <div class="question-2">
+                        <p>#2 : Which program runs first after booting the computer and loading the GUI?</p>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="option-1" name="options" class="custom-control-input">
+                            <label class="custom-control-label" for="option-1">Desktop Manager</label>
+                        </div> 
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="option-2" name="options" class="custom-control-input">
+                            <label class="custom-control-label" for="option-2">File Manager</label>
+                        </div> 
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="option-3" name="options" class="custom-control-input">
+                            <label class="custom-control-label" for="option-3">Windows Explorer</label>
+                        </div> 
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="option-4" name="options" class="custom-control-input">
+                            <label class="custom-control-label" for="option-4">Authentication</label>
+                        </div>
+                    </div> 
+                    <div class="question-3">
+                        <p>#3 : When you delete a file in your computer, where does it go?</p>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="option-1" name="options" class="custom-control-input">
+                            <label class="custom-control-label" for="option-1">Recycle bin</label>
+                        </div> 
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="option-2" name="options" class="custom-control-input">
+                            <label class="custom-control-label" for="option-2">Hard disk</label>
+                        </div> 
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="option-3" name="options" class="custom-control-input">
+                            <label class="custom-control-label" for="option-3">Taskbar</label>
+                        </div> 
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="option-4" name="options" class="custom-control-input">
+                            <label class="custom-control-label" for="option-4">None of these</label>
+                        </div>
+                    </div> 
+                    <div class="question-4">
+                        <p>#4 : The size of virtual memory is based on which of the following?</p>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="option-1" name="options" class="custom-control-input">
+                            <label class="custom-control-label" for="option-1">CPU</label>
+                        </div> 
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="option-2" name="options" class="custom-control-input">
+                            <label class="custom-control-label" for="option-2">RAM</label>
+                        </div> 
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="option-3" name="options" class="custom-control-input">
+                            <label class="custom-control-label" for="option-3">Address bus</label>
+                        </div> 
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="option-4" name="options" class="custom-control-input">
+                            <label class="custom-control-label" for="option-4">Data bus</label>
+                        </div>
+                    </div> 
+                    <div class="question-5">
+                        <p>#5 : Who provides the interface to access the services of the operating system?</p>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="option-1" name="options" class="custom-control-input">
+                            <label class="custom-control-label" for="option-1">API</label>
+                        </div> 
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="option-2" name="options" class="custom-control-input">
+                            <label class="custom-control-label" for="option-2">System call</label>
+                        </div> 
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="option-3" name="options" class="custom-control-input">
+                            <label class="custom-control-label" for="option-3">Library</label>
+                        </div> 
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="option-4" name="options" class="custom-control-input">
+                            <label class="custom-control-label" for="option-4">Assembly instruction</label>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+
+        <!-- RHS -->
+        <div class="col-3">
+            <div class="status" id="floater">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis voluptates facilis voluptatibus voluptate sint quas, cum deserunt, velit quod, voluptas ad repellat fugiat. Reiciendis asperiores dicta, perferendis modi magni quibusdam!
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
