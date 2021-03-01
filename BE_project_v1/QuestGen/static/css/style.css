@@ -7,6 +7,7 @@
     --font-grey: #75767b;
     --btn-color: #42a5f6;
     --purple: #9f42aa;
+    --violet: #6c43ab;
 }
 
 @font-face {
@@ -49,6 +50,34 @@
     }
   } */
 /* ------- Media Queries end-------- */
+
+
+/* Progress Bar */
+.progress 
+{
+ position: fixed;
+ left: 0px;
+ top: 0px;
+ width: 100%;
+ height: 100%;
+ z-index: 9999;
+ background-color: #F2F2F2;
+}
+.bar 
+{ 
+  background-color: var(--purple); 
+  width:0%; 
+  height:5px; 
+  border-radius: 3px; 
+}
+.percent 
+{ 
+  position:absolute; 
+  display:inline-block; 
+  top:3px; 
+  left:48%; 
+}
+
 
 
 /* Default Settings */
@@ -191,7 +220,7 @@ nav{
 
 div .jumbotron {
   text-align: center;
-  padding-top: 150px;
+  padding-top: 90px;
 }
 
 div .jumbotron .container .display-3 {
@@ -417,16 +446,23 @@ div.quiz-container {
 }
 
 div.quiz-header {
-  background-color: var(--container-background);
+  background-color: var(--violet);
   padding: 20px;
   border-radius: 5px;
   -webkit-box-shadow: 1px 1px 3px 0px rgba(50, 50, 50, 0.49);
   -moz-box-shadow:    1px 1px 3px 0px rgba(50, 50, 50, 0.49);
   box-shadow:         1px 1px 3px 0px rgba(50, 50, 50, 0.49);
+  color: white;
+  font-family: roboto-medium;
+}
+
+div.quiz-header-title h3{
+  text-align: center;
+  font-family: roboto-black;
 }
 
 /* TODO: Use For Loops and delete repetative code */
-div.question .question-1, .question-2, .question-3, .question-4, .question-5  {
+div.question .question-1  {
   background-color: var(--container-background);
   padding: 20px;
   border-radius: 5px;
@@ -436,18 +472,24 @@ div.question .question-1, .question-2, .question-3, .question-4, .question-5  {
   margin-bottom: 20px;
 }
 
+div.question {
+  font-family: roboto-medium;
+}
+
 #floater {
   position: fixed;
   top: 1;
   right: 1;
   margin-right: 10px;
+  font-family: roboto-medium;
 }
 
 div.status {
-  background-color: var(--container-background);
+  background-color: var(--purple);
   padding: 20px;
   border-radius: 5px;
   -webkit-box-shadow: 1px 1px 3px 0px rgba(50, 50, 50, 0.49);
   -moz-box-shadow:    1px 1px 3px 0px rgba(50, 50, 50, 0.49);
   box-shadow:         1px 1px 3px 0px rgba(50, 50, 50, 0.49);
+  color: white;
 }

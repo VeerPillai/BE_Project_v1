@@ -3,3 +3,9 @@
 /account/__pycache__/*
 /BE_project_v1/__pycache__/*
 /Questgen/__pycache__/*
+/Modules/data/*
+/uploads/*
+BE_project_v1/uploads/*
+BE_project_v1/Modules/data/*
+BE_project_v1/QuestGen/migrations/__pycache__/*
+

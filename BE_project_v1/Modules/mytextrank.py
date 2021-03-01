@@ -4,30 +4,23 @@ from nltk import sent_tokenize, word_tokenize
 from operator import itemgetter
 import numpy as np
 
-# Get Contents ##
-text = ""
-f = open("D:\\BE_Project_v1\\test_modules\\textrank\\MemoryManagement.txt", "r")
-# f = open("D:\\BE_Project_v1\\test_modules\\textrank\\ProcessManagement.txt", "r")
-# f = open("D:\\BE_Project_v1\\test_modules\\textrank\\Deadlock.txt", "r")
-for x in f.readlines():
-    text += x
-f.close()
+
 
 # Tokenize the sentences and remove punctuations  ##
-sent_text = sent_tokenize(text)
-
-result_sentences = []
-for sentence in sent_text:
-    tokenized_text = word_tokenize(sentence)
-    new_words= [word for word in tokenized_text if word.isalnum()]
-    result_sentences.append(new_words)
-
-# for x in result_sentences:
-#     print(x)
+def do_tokenize(text):
+    sent_text = sent_tokenize(text)
+    result_sentences = []
+    for sentence in sent_text:
+        tokenized_text = word_tokenize(sentence)
+        new_words= [word for word in tokenized_text if word.isalnum()]
+        result_sentences.append(new_words)
+    return result_sentences
 
 
 # Text Rank Implementation ##
-def textrank(sentences, top_n=5, stopwords=None):
+def textrank(text, top_n=5, stop_words=None):
+    stop_words = stopwords.words('english')
+    sentences = do_tokenize(text)
     S = build_similarity_matrix(sentences, stop_words)
     sentence_ranks = pagerank(S)
 
@@ -38,7 +31,7 @@ def textrank(sentences, top_n=5, stopwords=None):
     return summary
 
 
-def build_similarity_matrix(sentences, stopwords=None):
+def build_similarity_matrix(sentences, stop_words=None):
     # Create an empty similarity matrix
     S = np.zeros((len(sentences), len(sentences)))
 
@@ -95,10 +88,7 @@ def sentence_similarity(sent1, sent2, stopwords=None):
     return 1 - cosine_distance(vector1, vector2)
 
 
-stop_words = stopwords.words('english')
 
-for x in textrank(result_sentences, 6, stop_words):
-    print(x)
 
 
 
