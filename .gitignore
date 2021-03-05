@@ -8,4 +8,11 @@
 BE_project_v1/uploads/*
 BE_project_v1/Modules/data/*
 BE_project_v1/QuestGen/migrations/__pycache__/*
+BE_project_v1/Modules/vectors.kv.vectors.npy
+BE_project_v1/Modules/vectors.kv
+BE_project_v1/Modules/__pycache__/clozeGenerator.cpython-38.pyc
+BE_project_v1/Modules/__pycache__/mytextrank.cpython-38.pyc
+BE_project_v1/Modules/__pycache__/whGenerator.cpython-38.pyc
+BE_project_v1/Ratings.xlsx
+BE_project_v1/Downloads/*
 

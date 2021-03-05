@@ -2,31 +2,74 @@
 {% block content %}
 {% load static %}
 
-<form>
+<form id="rateForm" method="POST" action="{% url 'saveratings' %}">
     {% csrf_token %}
     <div class="quiz-container">
         <div class="row">
             <!-- LHS -->
-            <div class="col-9">
+            <div class="col-12">
+                <div class="instructions" style="font-family: roboto-medium;">
+                    <p>Read Instructions for rating the questions
+                    <a data-toggle="modal" data-target="#instructionsModal" style="margin-top: 25px; color: blue; text-decoration: underline;" href="#" role="button"> here</a></p>
+
+                    <div class="modal fade" id="instructionsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <h3 class="modal-title" id="exampleModalLabel">Instructions for rating</h3>
+                            </div>
+                            <div class="modal-body">
+                                <p>Rate the questions in the range : 0 - 1 where,</p>
+                                <p>0 - Worst</p>
+                                <p>1 - Best</p>
+                                <p>Grammatical : Is the question grammatically correct?</p>
+                                <p>Answerability : Is the question answerable from the input text?</p>
+                                <p>Difficulty Level : Is the question difficult enough to solve? (OR) Is the answer easily guessable?</p>
+                                <p>Context : Is the question contextually from the central idea of the input file?</p>
+                            </div>
+                            <div class="modal-footer" style="margin: auto;">
+                                <a class="btn btn-primary btn-sm" href="#" role="button" data-dismiss="modal">Close</a>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="quiz-body">
                     <div class="quiz-header">
                         <div class="quiz-header-title">
-                            <h3>Section A: Cloze-Questions</h3>
+                            <h3>Section A: FIB-Questions</h3>
                         </div>
                         <p>Date : {{ curr_datetime }}</p>
+                        <p>Input File : {{ filename }} </p>
+
                     </div>
                     <hr style="border-top: 3px solid var(--purple);">
 
                     <div class="question">
                         {% for question in cloze_questions %}
-                            <div class="question-1">   
+                        <div class="row">
+                            <div class="question-1" style="width: 65%;">   
                                 <p>Q : {{ question.question }}</p> 
                                 <p>A : {{ question.answer }}</p> 
-                                <p>Options : {{ question.distractors }}</p> 
-                            </div> 
+                                <p>Options : {{ question.distractors }}</p>
+                            </div>
+
+                            <div class="rate-container" style="width: 30%;">
+                                Grammatical : &nbsp;&nbsp;&nbsp;<input type="range" value="0.5" name="gramRate" id="gramRate" min="0" max="1" step="0.1" oninput="this.nextElementSibling.value = this.value" required>&nbsp;<output>0.5</output>
+                                <br>
+                                Answerability : &nbsp;&nbsp;<input type="range" value="0.5" name="ansRate" id="ansRate" min="0" max="1" step="0.1" oninput="this.nextElementSibling.value = this.value" required>&nbsp;<output>0.5</output> 
+                                <br>
+                                Difficulty Level : <input type="range" value="0.5" name="diffRate" id="diffRate" min="0" max="1" step="0.1" oninput="this.nextElementSibling.value = this.value" required>&nbsp;<output>0.5</output> 
+                                <br>
+                                Context : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="range" value="0.5" name="conRate" id="conRate" min="0" max="1" step="0.1" oninput="this.nextElementSibling.value = this.value" required>&nbsp;<output>0.5</output> 
+                                <br>
+                            </div>
+                        </div>
                         {% endfor %}
                     </div>
-
+                    
+                    
 
                     <div class="quiz-header">
                         <div class="quiz-header-title">
@@ -35,23 +78,40 @@
                     </div>
                     <hr style="border-top: 3px solid var(--purple);">
                     <div class="question">
-                        {% for pairs in wh_questions %}
-                            <div class="question-1">
-                                <p>S : {{ pairs.0 }}</p>
-                                <p>Q : {{ pairs.1 }}</p>
-                            </div> 
-                        {% endfor %}
+                        <div class="row">
+                            {% for pairs in wh_questions %}
+                                <div class="question-1" style="width: 65%;">
+                                    <p>S : {{ pairs.0 }}</p>
+                                    <p>Q : {{ pairs.1 }}</p>
+                                </div> 
+
+                                <div class="rate-container" style="width: 30%;">
+                                    Grammatical : &nbsp;&nbsp;&nbsp;<input type="range" value="0.5" name="gramRate" id="gramRate" min="0" max="1" step="0.1" oninput="this.nextElementSibling.value = this.value" required>&nbsp;<output>0.5</output>
+                                    <br>
+                                    Answerability : &nbsp;&nbsp;<input type="range" value="0.5" name="ansRate" id="ansRate" min="0" max="1" step="0.1" oninput="this.nextElementSibling.value = this.value" required>&nbsp;<output>0.5</output> 
+                                    <br>
+                                    Difficulty Level : <input type="range" value="0.5" name="diffRate" id="diffRate" min="0" max="1" step="0.1" oninput="this.nextElementSibling.value = this.value" required>&nbsp;<output>0.5</output> 
+                                    <br>
+                                    Context : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="range" value="0.5" name="conRate" id="conRate" min="0" max="1" step="0.1" oninput="this.nextElementSibling.value = this.value" required>&nbsp;<output>0.5</output> 
+                                    <br>
+                                </div>
+                            {% endfor %}
+                        </div>
                     </div>
                 </div>
             </div>
+   
 
             <!-- RHS -->
-            <div class="col-3">
+            <!-- <div class="col-3">
                 <div class="status" id="floater">
                     Instructions for Human Evaluation Metrics goes here:
                     
                 </div>
-            </div>
+            </div> -->
+        </div>
+        <div class="row">
+            <a style="margin: auto; margin-bottom: 20px;" class="btn btn-primary btn-lg" href="javascript:{}" onclick="document.getElementById('rateForm').submit();" role="button">Submit<i class="arrow-icon"></i></a>
         </div>
     </div>
 </form>

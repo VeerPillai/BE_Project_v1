@@ -2,6 +2,15 @@
 {% block content %}
     
     <div class="container">
+        <!-- success msg if any -->
+        {% for message in messages %}
+            <div class="alert alert-success" style="margin-top: 20px;">
+                <a class="close" href="#" data-dismiss="alert">×</a>
+                {{ message }}
+            </div>
+        {% endfor %}
+        <!-- End success -->
+
         <div style="background:transparent !important" class="jumbotron jumbotron-fluid lg-12">
             <div class="container">
                 <p class="lead">A Final Year Project on</p>

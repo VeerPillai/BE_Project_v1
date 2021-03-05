@@ -26,7 +26,7 @@
                         <h3 class="modal-title" id="exampleModalLabel">Options</h3>
                         </div>
                         <div class="modal-body">
-                            <p>No. of Questions to Generate : <input type="number" name="count" id="count" min="1" max="30" required></p>
+                            <p>No. of Questions to Generate : <input type="range" value="10" name="count" id="count" min="1" max="30" oninput="this.nextElementSibling.value = this.value" required>&nbsp;<output>10</output></p>    
                         </div>
                         <div class="modal-footer" style="margin: auto;">
                             <a class="btn btn-primary btn-sm" href="#" role="button" data-dismiss="modal">Close</a>
@@ -39,8 +39,8 @@
 
                 <br>
 
-
-                <a style="margin-top: 25px;" class="btn btn-primary btn-lg" href="#" role="button">Download<i class="arrow-icon"></i></a>
+    
+                <button style="margin-top: 25px;" class="btn btn-primary btn-lg" type="submit"  name="download" id="download">Download<i class="arrow-icon"></i></a>
             </div>
             <div class="col-5 rhs-div">
                 <div class="drop-zone">
